@@ -2,7 +2,7 @@
 #undef main
 
 #include "imgui.h"
-#include "imgui_sdl.h"
+#include "../imgui_sdl.h"
 
 int main()
 {
@@ -51,7 +51,7 @@ int main()
 		const int buttons = SDL_GetMouseState(&mouseX, &mouseY);
 
 		// Setup low-level inputs (e.g. on Win32, GetKeyboardState(), or write to those fields from your Windows message loop handlers, etc.)
-		
+
 		io.DeltaTime = 1.0f / 60.0f;
 		io.MousePos = ImVec2(static_cast<float>(mouseX), static_cast<float>(mouseY));
 		io.MouseDown[0] = buttons & SDL_BUTTON(SDL_BUTTON_LEFT);

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 
-project(imgui_sdl)
+project(imgui_sdl_example)
 
 if (NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
     message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
@@ -25,7 +25,8 @@ conan_cmake_run(
 conan_basic_setup()
 
 aux_source_directory(. SRC_LIST)
-add_library(${PROJECT_NAME} ${SRC_LIST})
+aux_source_directory(.. LIB_SRC_LIST)
+add_executable(${PROJECT_NAME} ${SRC_LIST} ${LIB_SRC_LIST})
 
 #include_directories(.)
 #add_definitions(-DIMGDIR="../img/")
